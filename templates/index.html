@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medica-lite</title>
+
+
+  <link rel="icon" href="{{ url_for('static', filename='images/avatar-doctor-warning-svgrepo-com.svg') }}" type="image/png">
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="100">
+
+  <!--Navbar-->
+  <header class="header-wrapper">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="#"><img src="images/ChatGPT Image Apr 28, 2025, 09_31_58 PM.png" class="img-fluid"
+            alt=""></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-stream navbar-toggler-icon"></i>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav menu-navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#team">Team</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#gallery">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#testimonial">Testimonial</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#blog">Blog</a>
+            </li>
+            <li class="nav-item mt-3 mt-lg-0">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+  <!--Banner-->
+  <section id="home" class="home">
+    <div class="banner-wrapper wrapper">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 order-md-1 order-2">
+            <h3>Your Health,</h3>
+            <h1>Our Commitment</h1>
+            <p>Join us in a caring and professional medical environment. Our dedicated team works tirelessly to provide
+              you with the health and support you deserve!</p>
+            <a href="{{ url_for('rdvs.ajouter_rdv') }}"" class="main-btn mt-4 fill-btn">Appointment</a>
+            <a href="#" class="main-btn mt-4 ms-sm-3 ms-1">Learn more</a>
+          </div>
+          <div class="col-md-6 order-md-2 order-1 mb-md-0 mb-5">
+            <div class="top-right-sec">
+              <div class="animate-img">
+                <img src="{{ url_for('static', filename='images/top-banner-img/dna-svgrepo-com.svg') }}" class="aimg2">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper pb-0">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-6 mb-4">
+            <div class="card text-center">
+              <div class="icon-box">
+                <img class="img-fluid" src="{{ url_for('static', filename='images/top-banner-img/Appointment-icon.png') }}">
+              </div>
+              <div>
+                <h4>Easy Appointment</h4>
+                <p>Effortlessly book appointments with our user-friendly online system</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 mb-4">
+            <div class="card text-center">
+              <div class="icon-box">
+                <img class="img-fluid" src="{{ url_for('static', filename='images/top-banner-img/Emergency-icon.png') }}">
+              </div>
+              <div>
+                <h4>Emergency Service</h4>
+                <p>Rapid and reliable emergency care available when you need it most</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 mb-4">
+            <div class="card text-center">
+              <div class="icon-box">
+                <img class="img-fluid" src="{{ url_for('static', filename='images/top-banner-img/7-Service-icon.png') }}">
+              </div>
+              <div>
+                <h4>24/7 Service</h4>
+                <p>Round-the-clock availability, ensuring continuous care when you need it.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!--About-->
+  <section id="about" class="about-wrapper wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mb-md-0 mb-5">
+          <div class="position-relative">
+            <img src="{{ url_for('static', filename='images/about/doctornurse-svgrepo-com.svg') }}" class="img-fluid">
+          </div>
+        </div>
+        <div class="col-md-6 text-center text-md-start">
+          <h2>Welcome to the family</h2>
+          <p>
+            Discover exceptional healthcare at our hospital website, where you'll find a wealth of information on
+            services, expert doctors, and valuable resources for optimal patient care.</p>
+          <div class="card mt-5">
+            <div class="about-clinic">
+              <h4>500+</h4>
+              <p>Happy patients</p>
+            </div>
+            <div class="about-clinic">
+              <h4>88+</h4>
+              <p>Qualified Doctors</p>
+            </div>
+            <div class="about-clinic">
+              <h4>25+</h4>
+              <p>Experience</p>
+            </div>
+            <div class="about-clinic">
+              <h4>55+</h4>
+              <p>Medical Awards</p>
+            </div>
+            <span class="line-1"></span>
+            <span class="line-2"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!--Service-->
+  <section id="services" class="services-wrapper wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 text-center mb-5">
+          <h3>Our Services</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-sm-6 mb-4">
+          <div class="card">
+            <div class="icon-box">
+              <img src="{{ url_for('static', filename='images/services/doctor-svgrepo-com.svg') }}">
+            </div>
+            <div>
+              <h4>General Consultation</h4>
+              <p>Comprehensive medical care for every patient. Whether it's a regular check-up or a new concern, our
+                doctors are here to listen and assist you.</p>
+              <a href="#" class="main-btn mt-4">Read more</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 mb-4">
+          <div class="card">
+            <div class="icon-box">
+              <img src="{{ url_for('static', filename='images/services/syringe-svgrepo-com (1).svg') }}">
+            </div>
+            <div>
+              <h4>Vaccination Services</h4>
+              <p>Stay protected with our complete range of vaccinations for children, adults, and seniors, following
+                global health guidelines.</p>
+              <a href="#" class="main-btn mt-4">Read more</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 mb-4">
+          <div class="card">
+            <div class="icon-box">
+              <img src="{{ url_for('static', filename='images/services/laboratory-test-tube-svgrepo-com.svg') }}">
+            </div>
+            <div>
+              <h4>Laboratory Testing</h4>
+              <p>Fast and accurate diagnostic tests, including blood tests, urine tests, and more, performed on-site for
+                your convenience.</p>
+              <a href="#" class="main-btn mt-4">Read more</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 mb-4">
+          <div class="card">
+            <div class="icon-box">
+              <img src="{{ url_for('static', filename='images/services/medical-doctor-standing-beside-x-ray-svgrepo-com.svg') }}">
+            </div>
+            <div>
+              <h4>Radiology & Imaging</h4>
+              <p>Advanced imaging services, including X-rays and ultrasounds, to help diagnose and monitor your health
+                conditions.</p>
+              <a href="#" class="main-btn mt-4">Read more</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 mb-4">
+          <div class="card">
+            <div class="icon-box">
+              <img src="{{ url_for('static', filename='images/services/home-1-svgrepo-com.svg') }}">
+            </div>
+            <div>
+              <h4>Home Visits</h4>
+              <p>Medical care from the comfort of your home. Book a doctor visit at home for consultations, follow-ups,
+                and minor treatments.</p>
+              <a href="#" class="main-btn mt-4">Read more</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 mb-4">
+          <div class="card">
+            <div class="icon-box">
+              <img src="{{ url_for('static', filename='images/services/support-svgrepo-com.svg') }}">
+            </div>
+            <div>
+              <h4>Patient Support & Guidance</h4>
+              <p>Our medical staff is here to assist you with personalized advice, follow-ups, and help you navigate
+                your healthcare journey.</p>
+              <a href="#" class="main-btn mt-4">Read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!--Team-->
+  <section id="team" class="team-wrapper wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 text-center mb-5">
+          <h3>Our Doctors</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-sm-6 mb-4">
+          <div class="card rounded-3">
+            <div class="team-img">
+              <img src="{{ url_for('static', filename='images/team/494823160_2002371766835458_7183124344613910852_n (1).jpg') }}" class="img-fluid">
+            </div>
+            <div class="team-info pt-4 text-center">
+              <h5>Dr X</h5>
+              <p>Cardiothoracic surgeon</p>
+              <ul class="social-network">
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                <li><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 mb-4">
+          <div class="card rounded-3">
+            <div class="team-img">
+              <img src="{{ url_for('static', filename='images/team/444f9284-ca2c-47dc-b48d-9d1d2964b94a.jpg') }}" class="img-fluid">
+            </div>
+            <div class="team-info pt-4 text-center">
+              <h5>Dr Y.</h5>
+              <p>GP</p>
+              <ul class="social-network">
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                <li><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 mb-4">
+          <div class="card rounded-3">
+            <div class="team-img">
+              <img src="{{ url_for('static', filename='images/team/8853c43b-3ec4-4c33-92c8-19e6ef3d76fa.jpg') }}" class="img-fluid">
+            </div>
+            <div class="team-info pt-4 text-center">
+              <h5>Dr Z.</h5>
+              <p>Pediatrician</p>
+              <ul class="social-network">
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                <li><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!--Gallery-->
+  <section id="gallery" class="gallery-wrapper wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 text-center mb-5">
+          <h3>Our gallery</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-sm-6 mb-4">
+          <img src="{{ url_for('static', filename='images/gallery/wysiwyg-uploads_1580196666465-doctor.jpg') }}" class="w-100 h-100">
+        </div>
+        <div class="col-md-4 col-sm-6 mb-4">
+          <img src="{{ url_for('static', filename='images/gallery/doctor-main-mobile.svg') }}" class="w-100 h-100">
+        </div>
+        <div class="col-md-4 col-sm-6 mb-4">
+          <img src="{{ url_for('static', filename='images/gallery/3.jpg') }}" class="w-100 h-100">
+        </div>
+        <div class="col-md-4 col-sm-6 mb-4">
+          <img src="{{ url_for('static', filename='images/gallery/5.jpg') }}" class="w-100 h-100">
+        </div>
+        <div class="col-md-8 col-sm-6 mb-4">
+          <img src="{{ url_for('static', filename='images/gallery/4.jpg') }}" class="w-100 h-100">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!--Testimonial-->
+  <section id="testimonial" class="testimonial-wrapper wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 text-center mb-4">
+          <h3 class="text-dark">Testimonials</h3>
+        </div>
+        <div id="carouselExampleDark" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+              aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+              aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row align-items-center">
+                <div class="col-xl-4 col-md-5 col-sm-6">
+                  <div class="card text-center">
+                    <img src="{{ url_for('static', filename='images/testimonial/5f69834d-3d45-4b7c-8eae-6c0256d12c85.jpg') }}" class="img-fluid">
+                    <h4 class="pt-4 mb-0">Ayoub</h4>
+                    <p>Student</p>
+                  </div>
+                </div>
+                <div class="col-xl-8 col-md-7 col-sm-6 ps-md-4 pt-sm-0 pt-4">
+                  <h4>Awesome Work</h4>
+                  <p class="custom">The team was so welcoming and professional. Scheduling an appointment was quick, and
+                    the doctors really took the time to listen to my concerns. Highly recommend!</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row align-items-center">
+                <div class="col-xl-4 col-md-5 col-sm-6">
+                  <div class="card text-center">
+                    <img src="{{ url_for('static', filename='images/testimonial/d005cd0e-c455-4df0-805f-011b579b4c2c.jpg') }}" class="img-fluid">
+                    <h4 class="pt-4 mb-0">Ilyes</h4>
+                    <p>Intern</p>
+                  </div>
+                </div>
+                <div class="col-xl-8 col-md-7 col-sm-6 ps-md-4 pt-sm-0 pt-4">
+                  <h4>Awesome Work</h4>
+                  <p class="custom">I felt cared for from the moment I walked in. The medical staff are knowledgeable
+                    and compassionate — a rare combination these days!</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row align-items-center">
+                <div class="col-xl-4 col-md-5 col-sm-6">
+                  <div class="card text-center">
+                    <img src="{{ url_for('static', filename='images/testimonial/dc8c82eb-27ec-40fe-941f-1ea3b8acc146.jpg') }}" class="img-fluid">
+                    <h4 class="pt-4 mb-0">Yassine</h4>
+                    <p>Student</p>
+                  </div>
+                </div>
+                <div class="col-xl-8 col-md-7 col-sm-6 ps-md-4 pt-sm-0 pt-4">
+                  <h4>Awesome Work</h4>
+                  <p class="custom">Efficient service, friendly doctors, and a clean environment. I appreciated how easy
+                    it was to book and receive follow-up notifications.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Appointment-->
+  <section class="appointment-wrapper wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-8 col-10">
+          <h3>Request your appointment and start your smile makeover</h3>
+          <a href="#" class="main-btn fill-btn mt-5">Request Appointment</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!--Blog-->
+  <section id="blog" class="blog-wrapper wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 text-center mb-5">
+          <h3 class="text-dark">Blog</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-sm-6 mb-4">
+          <div class="card p-0 border-0 rounded-0">
+            <img src="{{ url_for('static', filename='images/blog/1.jpg') }}">
+            <div class="blog-content">
+              <h5 class="text-white mb-4">General Health Check-up</h5>
+              <h6 class="text-white">By ADMOUN- Feburary 18, 2025</h6>
+              <p class="text-white">Stay ahead of your health with our complete preventive check-up packages. Early
+                detection saves lives!</p>
+              <a href="#" class="main-btn mt-2">Read more</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 mb-4">
+          <div class="card p-0 border-0 rounded-0">
+            <img src="{{ url_for('static', filename='images/blog/2.jpg') }}">
+            <div class="blog-content">
+              <h5 class="text-white mb-4">Vaccination & Immunization</h5>
+              <h6 class="text-white">By ADMOUN - Feburary 18, 2025</h6>
+              <p class="text-white">Protect yourself and your loved ones with our full range of vaccines for adults and
+                children. Quick, safe, and certified.</p>
+              <a href="#" class="main-btn mt-2">Read more</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 mb-4">
+          <div class="card p-0 border-0 rounded-0">
+            <img src="{{ url_for('static', filename='images/blog/3.jpg') }}">
+            <div class="blog-content">
+              <h5 class="text-white mb-4">Chronic Disease Management</h5>
+              <h6 class="text-white">By ADMOUN - Feburary 18, 2025</h6>
+              <p class="text-white">We help you manage conditions like diabetes, hypertension, and asthma with
+                personalized care plans</p>
+              <a href="#" class="main-btn mt-2">Read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="contact" class="footer-wrapper wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h5>Clinic Location</h5>
+          <p>Tunis</p>
+          <div class="contact-info">
+            <ul class="list-unstyled">
+              <li><a href="#"><i class="fa fa-home me-3"></i>Lac 2</a></li>
+              <li><a href="#"><i class="fa fa-phone me-3"></i>000000000</a></li>
+              <li><a href="#"><i class="fa fa-envelope me-3"></i>clinic@gmail.com</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h5>More Links</h5>
+          <ul class="link-widget p-0">
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Our Office</a></li>
+            <li><a href="#">Delivery</a></li>
+            <li><a href="#">Our Store</a></li>
+            <li><a href="#">Guarentee</a></li>
+            <li><a href="#">Buy Gift card</a></li>
+            <li><a href="#">Return Policy</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h5>More Links</h5>
+          <ul class="link-widget p-0">
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Our Office</a></li>
+            <li><a href="#">Delivery</a></li>
+            <li><a href="#">Our Store</a></li>
+            <li><a href="#">Guarentee</a></li>
+            <li><a href="#">Buy Gift card</a></li>
+            <li><a href="#">Return Policy</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h5>Newsletter</h5>
+          <div class="form-group mb-4">
+            <input type="email" class="form-control bg-transparent" placeholder="Enter your email here">
+            <button type="submit" class="main-btn rounded-2 mt-3 border-white text-white">Subscribe</button>
+          </div>
+          <h5>Stay connected</h5>
+          <ul class="social-network d-flex align-items-center p-0">
+            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+            <li><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid copyright-section">
+      <p class="p-0">Copyright <a href="#"></a> All Rights Reserved</p>
+    </div>
+  </section>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+
+</html>
